@@ -1,3 +1,5 @@
+using cropinsurance.server.Repository;
+using cropinsurance.server.Services;
 using Scalar.AspNetCore;
 
 namespace darkdelta.server
@@ -10,6 +12,8 @@ namespace darkdelta.server
 
             // Add services to the container.
 
+            builder.Services.AddSingleton<DbContext>();
+            builder.Services.ConfigureRepositoryWrapper();
             builder.Services.AddControllers();
             builder.Services.AddOpenApi();
 
