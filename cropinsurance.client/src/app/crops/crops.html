@@ -1,0 +1,26 @@
+<h2>Crops</h2>
+<button type="button" class="btn btn-primary">+ Add new Crop</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Crop Id</th>
+      <th scope="col">Crop Name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (Crop of crops; track Crop.cropId; let idx = $index) {
+      <tr>
+        <th scope="row">{{ idx + 1 }}</th>
+        <td>{{ Crop.cropId }}</td>
+        <td>{{ Crop.cropName }}</td>
+        <td>
+          <button type="button" class="btn btn-primary">View</button>
+          <button type="button" class="btn btn-primary">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

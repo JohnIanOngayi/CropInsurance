@@ -12,6 +12,7 @@ namespace darkdelta.server
 
             // Add services to the container.
 
+            builder.Services.ConfigureCors();
             builder.Services.AddSingleton<DbContext>();
             builder.Services.ConfigureRepositoryWrapper();
             builder.Services.AddControllers();
@@ -22,6 +23,7 @@ namespace darkdelta.server
             // Configure the HTTP request pipeline.
 
             app.UseHttpsRedirection();
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 

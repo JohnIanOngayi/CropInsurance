@@ -1,0 +1,26 @@
+<h2>Seasons</h2>
+<button type="button" class="btn btn-primary">+ Add new Season</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Season Id</th>
+      <th scope="col">Season Name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (season of seasons; track season.seasonId; let idx = $index) {
+      <tr>
+        <th scope="row">{{ idx + 1 }}</th>
+        <td>{{ season.seasonId }}</td>
+        <td>{{ season.seasonName }}</td>
+        <td>
+          <button type="button" class="btn btn-primary">View</button>
+          <button type="button" class="btn btn-primary">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

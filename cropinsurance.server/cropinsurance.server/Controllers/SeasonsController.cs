@@ -20,7 +20,7 @@ namespace cropinsurance.server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Season>>> GetAll()
         {
-            IEnumerable<Season> seasons = await repository.Seasons.GetAllSeasonsAsync();
+            List<Season>? seasons = await repository.Seasons.GetAllSeasonsAsync() as List<Season>;
             return Ok(seasons);
         }
 
